@@ -17,10 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errorMessage = 'Please enter a valid email address.';
     } else {
         /*
-         * Add database storage or email delivery here.
-         * Example:
-         * mail('your-email@example.com', 'New Appointment Request', $message);
+         * Add secure database storage, SMTP email delivery,
+         * Medicover appointment API, or a trusted form service here.
+         *
+         * This example only displays a success message.
          */
+
         $successMessage = 'Thank you. Your appointment request has been received.';
     }
 }
@@ -30,12 +32,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Aarav Mehta | Urologist & Andrologist</title>
-    <meta name="description" content="Expert urology, kidney stone, prostate and men's health care. Book an appointment with Dr. Aarav Mehta.">
+
+    <title>Dr. Vinay Ausekar | Senior Consultant Urologist | Medicover Hospitals</title>
+
+    <meta
+        name="description"
+        content="Consult Dr. Vinay Ausekar, Senior Consultant Urologist at Medicover Hospitals, Financial District, Hyderabad. Expertise in kidney stones, uro-oncology, robotic surgery, renal transplant and andrology."
+    >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -46,15 +56,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="container topbar-inner">
             <div class="topbar-item">
                 <span class="topbar-icon">☎</span>
-                <a href="tel:+919582373383">+91 95823 73383</a>
+                <a href="tel:04068334455">040-68334455</a>
             </div>
 
             <div class="topbar-item topbar-hours">
                 <span class="topbar-icon">◷</span>
-                <span>Mon - Sat: 10:00 AM - 6:00 PM</span>
+                <span>Mon - Sat: 9:00 AM - 5:00 PM</span>
             </div>
 
-            <a class="topbar-whatsapp" href="https://wa.me/919315158716" target="_blank">
+            <a
+                class="topbar-whatsapp"
+                href="https://wa.me/917075493806"
+                target="_blank"
+                rel="noopener"
+            >
                 WhatsApp Consultation
             </a>
         </div>
@@ -63,14 +78,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="navbar">
         <div class="container nav-inner">
             <a href="#home" class="brand">
-                <span class="brand-mark">+</span>
-                <span>
-                    <strong>DR. AARAV MEHTA</strong>
-                    <small>UROLOGIST & ANDROLOGIST</small>
+                <img
+                    class="medicover-logo"
+                    src="images/medicover-logo.png"
+                    alt="Medicover Hospitals"
+                >
+
+                <span class="brand-divider"></span>
+
+                <span class="brand-doctor">
+                    <strong>DR. VINAY AUSEKAR</strong>
+                    <small>SENIOR CONSULTANT UROLOGIST</small>
                 </span>
             </a>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
                 <span></span>
                 <span></span>
                 <span></span>
@@ -78,9 +105,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <nav class="main-nav" id="mainNav">
                 <a href="#home">Home</a>
-                <a href="#about">About</a>
+                <a href="#about">About Doctor</a>
                 <a href="#specializations">Specializations</a>
-                <a href="#why-us">Why Choose Us</a>
+                <a href="#why-us">Why Medicover</a>
                 <a href="#reviews">Reviews</a>
                 <a href="#contact">Contact</a>
                 <a href="#appointment" class="nav-button">Book Appointment</a>
@@ -99,40 +126,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="hero-content reveal">
             <div class="eyebrow">
                 <span class="eyebrow-line"></span>
-                ADVANCED UROLOGY CARE
+                MEDICOVER HOSPITALS
             </div>
 
             <h1>
-                Expert care for
-                <em>better health</em>
-                and recovery.
+                Advanced urology care
+                for <em>better health.</em>
             </h1>
 
             <p>
-                Trusted urology, andrology and minimally invasive surgical care
-                designed around your comfort, privacy and long-term wellbeing.
+                Consult Dr. Vinay Ausekar, Senior Consultant Urologist at
+                Medicover Hospitals, Financial District, Hyderabad.
             </p>
 
             <div class="hero-actions">
                 <a href="#appointment" class="button button-primary">
-                    Make An Appointment
+                    Book An Appointment
                     <span>→</span>
                 </a>
 
-                <a href="tel:+919582373383" class="button button-outline">
-                    Call Now
+                <a href="tel:04068334455" class="button button-outline">
+                    Call Medicover
                 </a>
             </div>
 
             <div class="hero-trust">
-                <div class="trust-avatars">
-                    <span>AK</span>
-                    <span>RS</span>
-                    <span>PM</span>
-                </div>
+                <div class="trust-badge">M</div>
+
                 <div>
-                    <strong>Trusted by 10,000+ patients</strong>
-                    <small>Compassionate care. Advanced expertise.</small>
+                    <strong>Patient-focused urological care</strong>
+                    <small>Modern diagnosis. Advanced treatment. Trusted care.</small>
                 </div>
             </div>
         </div>
@@ -140,21 +163,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="hero-visual reveal">
             <div class="hero-image-frame">
                 <img
-                    src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=85"
-                    alt="Professional male doctor"
+                    src="images/dr-vinay-ausekar.png"
+                    alt="Dr. Vinay Ausekar, Senior Consultant Urologist"
                 >
             </div>
 
             <div class="experience-card">
-                <span class="experience-number">21+</span>
-                <span class="experience-label">Years of<br>Experience</span>
+                <span class="experience-number">6+</span>
+
+                <span class="experience-label">
+                    Years of<br>
+                    Experience
+                </span>
             </div>
 
             <div class="specialist-card">
                 <span class="specialist-icon">✚</span>
+
                 <span>
-                    <strong>Specialist Care</strong>
-                    <small>Advanced diagnosis</small>
+                    <strong>Senior Consultant</strong>
+                    <small>Urologist</small>
                 </span>
             </div>
         </div>
@@ -170,25 +198,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="intro-content reveal">
             <h2>
-                Clinical precision with
-                <span>human understanding.</span>
+                Experience, precision and
+                <span>personalised urology care.</span>
             </h2>
 
             <p>
-                Dr. Aarav Mehta is a senior Urologist, Andrologist and General
-                Surgeon with more than two decades of experience in treating
-                kidney stones, prostate conditions, urinary disorders and
+                Dr. Vinay Ausekar is a Senior Consultant Urologist at
+                Medicover Hospitals, Financial District, Hyderabad. He
+                provides comprehensive care for kidney stones, prostate
+                conditions, urinary disorders, urological cancers and
                 men's health concerns.
             </p>
 
             <p>
-                His practice combines evidence-based medicine, advanced
-                technology and personal attention to deliver clear diagnosis,
-                effective treatment and a comfortable recovery journey.
+                His clinical expertise includes endourology, laparoscopic and
+                robotic urology, uro-oncology, renal transplantation,
+                reconstructive urology and andrology.
             </p>
 
             <a href="#appointment" class="text-link">
-                Know More About The Doctor <span>→</span>
+                Book A Consultation <span>→</span>
             </a>
         </div>
     </div>
@@ -198,13 +227,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container doctor-grid">
         <div class="doctor-image-wrap reveal">
             <img
-                src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=85"
-                alt="Doctor in a medical clinic"
+                src="images/dr-vinay-ausekar.png"
+                alt="Dr. Vinay Ausekar at Medicover Hospitals"
             >
+
             <div class="doctor-stamp">
                 <span>MBBS</span>
                 <span>MS</span>
-                <span>DNB</span>
+                <span>MCh</span>
             </div>
         </div>
 
@@ -214,27 +244,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 MEET YOUR SPECIALIST
             </div>
 
-            <h2>Dr. Aarav Mehta</h2>
-            <p class="doctor-title">MBBS, MS, DNB - Urology</p>
+            <h2>Dr. Vinay Ausekar</h2>
+
+            <p class="doctor-title">
+                MBBS, MS (General Surgery), MCh (Urology)
+            </p>
 
             <p>
-                A patient-focused specialist providing advanced endourology,
-                laparoscopic, laser and minimally invasive procedures with
-                attention to detail at every stage of care.
+                Dr. Vinay Ausekar is a Senior Consultant Urologist offering
+                advanced and minimally invasive treatment for a broad range
+                of urological conditions.
             </p>
 
             <div class="qualification-list">
                 <div>
                     <strong>MBBS</strong>
-                    <span>Medical education and clinical foundation</span>
+                    <span>Medical qualification</span>
                 </div>
+
                 <div>
                     <strong>MS</strong>
                     <span>General Surgery</span>
                 </div>
+
                 <div>
-                    <strong>DNB</strong>
-                    <span>Urology and Genito-Urinary Surgery</span>
+                    <strong>MCh</strong>
+                    <span>Urology</span>
                 </div>
             </div>
         </div>
@@ -244,91 +279,111 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <section class="stats-section">
     <div class="container stats-grid">
         <div class="stat-item reveal">
-            <strong data-count="21">0</strong><span>+</span>
+            <strong data-count="6">0</strong>
+            <span>+</span>
             <small>Years of Experience</small>
         </div>
 
         <div class="stat-item reveal">
-            <strong data-count="10000">0</strong><span>+</span>
-            <small>Patients Treated</small>
+            <strong>₹1000</strong>
+            <small>Consultation Fee</small>
         </div>
 
         <div class="stat-item reveal">
-            <strong data-count="5000">0</strong><span>+</span>
-            <small>Successful Procedures</small>
+            <strong>93</strong>
+            <span>%</span>
+            <small>Patient Rating</small>
         </div>
 
         <div class="stat-item reveal">
-            <strong data-count="98">0</strong><span>%</span>
-            <small>Patient Satisfaction</small>
+            <strong>6</strong>
+            <span>+</span>
+            <small>Specialist Treatment Areas</small>
         </div>
     </div>
 </section>
 
-<section class="services-section section-padding" id="specializations">
+<section class="specialties-section section-padding" id="specializations">
     <div class="container">
-        <div class="section-heading reveal">
+        <div class="specialties-heading reveal">
             <div class="section-label">
                 <span>02</span>
                 AREAS OF EXPERTISE
             </div>
 
-            <h2>Advanced care for<br><span>urological wellbeing.</span></h2>
-
-            <p>
-                Comprehensive diagnosis and treatment for common and complex
-                urological conditions.
-            </p>
+            <h2>
+                Advanced care for
+                <span>urological wellbeing.</span>
+            </h2>
         </div>
 
-        <div class="service-grid">
-            <article class="service-card reveal">
-                <span class="service-number">01</span>
-                <div class="service-icon">◈</div>
-                <h3>Kidney Stone Treatment</h3>
-                <p>Modern laser and minimally invasive treatment options for kidney and urinary stones.</p>
-                <a href="#appointment">Learn More →</a>
-            </article>
+        <div class="specialties-layout">
+            <div class="specialty-tabs">
+                <button class="specialty-tab active" type="button">
+                    <span>◈</span>
+                    Kidney Stone Treatment
+                </button>
 
-            <article class="service-card service-card-featured reveal">
-                <span class="service-number">02</span>
-                <div class="service-icon">⌁</div>
-                <h3>Prostate Care</h3>
-                <p>Diagnosis and personalized treatment for prostate enlargement and related urinary symptoms.</p>
-                <a href="#appointment">Learn More →</a>
-            </article>
+                <button class="specialty-tab" type="button">
+                    <span>⌁</span>
+                    Prostate Care
+                </button>
 
-            <article class="service-card reveal">
-                <span class="service-number">03</span>
-                <div class="service-icon">✚</div>
-                <h3>Andrology</h3>
-                <p>Confidential, evidence-based care for male infertility and sexual health conditions.</p>
-                <a href="#appointment">Learn More →</a>
-            </article>
+                <button class="specialty-tab" type="button">
+                    <span>✚</span>
+                    Uro-Oncology
+                </button>
 
-            <article class="service-card reveal">
-                <span class="service-number">04</span>
-                <div class="service-icon">⌘</div>
-                <h3>Laparoscopic Urology</h3>
-                <p>Precision-led surgical procedures designed to reduce discomfort and improve recovery.</p>
-                <a href="#appointment">Learn More →</a>
-            </article>
+                <button class="specialty-tab" type="button">
+                    <span>◇</span>
+                    Robotic &amp; Laparoscopic Urology
+                </button>
 
-            <article class="service-card reveal">
-                <span class="service-number">05</span>
-                <div class="service-icon">◎</div>
-                <h3>Ureteric Conditions</h3>
-                <p>Specialist evaluation and treatment of urinary tract and ureter-related conditions.</p>
-                <a href="#appointment">Learn More →</a>
-            </article>
+                <button class="specialty-tab" type="button">
+                    <span>◎</span>
+                    Renal Transplant
+                </button>
 
-            <article class="service-card reveal">
-                <span class="service-number">06</span>
-                <div class="service-icon">◇</div>
-                <h3>Robotic-Assisted Surgery</h3>
-                <p>Advanced surgical technology supporting accuracy, control and faster recovery.</p>
-                <a href="#appointment">Learn More →</a>
-            </article>
+                <button class="specialty-tab" type="button">
+                    <span>⌘</span>
+                    Andrology &amp; Men's Health
+                </button>
+            </div>
+
+            <div class="specialty-description">
+                <p>
+                    Dr. Vinay Ausekar provides comprehensive urological care
+                    using modern diagnostic methods and minimally invasive
+                    treatment techniques at Medicover Hospitals.
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>Kidney Stone Care:</strong>
+                        URSL, RIRS, PCNL and laser lithotripsy.
+                    </li>
+
+                    <li>
+                        <strong>Prostate Treatment:</strong>
+                        Care for enlarged prostate, TURP and laser procedures.
+                    </li>
+
+                    <li>
+                        <strong>Uro-Oncology:</strong>
+                        Treatment for kidney, bladder and prostate cancers.
+                    </li>
+
+                    <li>
+                        <strong>Advanced Surgery:</strong>
+                        Laparoscopic and robotic-assisted procedures.
+                    </li>
+
+                    <li>
+                        <strong>Specialised Urology:</strong>
+                        Renal transplant, reconstructive urology and andrology.
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
@@ -338,49 +393,71 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="why-content reveal">
             <div class="section-label">
                 <span>03</span>
-                WHY CHOOSE US
+                WHY CHOOSE MEDICOVER
             </div>
 
-            <h2>Care that puts<br><span>you first.</span></h2>
+            <h2>
+                Trusted care with
+                <span>advanced expertise.</span>
+            </h2>
 
             <p>
-                Every consultation is built around clear communication,
-                appropriate treatment and respect for your individual needs.
+                From diagnosis to treatment and follow-up, patients receive
+                coordinated care supported by modern hospital facilities and
+                experienced specialists.
             </p>
 
-            <a href="#appointment" class="button button-primary">Schedule A Consultation <span>→</span></a>
+            <a href="#appointment" class="button button-primary">
+                Schedule A Consultation <span>→</span>
+            </a>
         </div>
 
         <div class="why-list">
             <div class="why-item reveal">
                 <span class="why-icon">01</span>
+
                 <div>
-                    <h3>Experienced Specialist</h3>
-                    <p>More than 21 years of focused clinical and surgical experience.</p>
+                    <h3>Experienced Urologist</h3>
+                    <p>
+                        Specialised care by Dr. Vinay Ausekar, Senior Consultant
+                        Urologist.
+                    </p>
                 </div>
             </div>
 
             <div class="why-item reveal">
                 <span class="why-icon">02</span>
+
                 <div>
-                    <h3>Advanced Technology</h3>
-                    <p>Modern diagnostic and minimally invasive treatment methods.</p>
+                    <h3>Advanced Procedures</h3>
+                    <p>
+                        Access to minimally invasive, laparoscopic and robotic
+                        procedures.
+                    </p>
                 </div>
             </div>
 
             <div class="why-item reveal">
                 <span class="why-icon">03</span>
+
                 <div>
-                    <h3>Personalized Treatment</h3>
-                    <p>Plans created around your symptoms, diagnosis and recovery goals.</p>
+                    <h3>Comprehensive Treatment</h3>
+                    <p>
+                        Care for stones, prostate conditions, cancers,
+                        transplant and andrology.
+                    </p>
                 </div>
             </div>
 
             <div class="why-item reveal">
                 <span class="why-icon">04</span>
+
                 <div>
-                    <h3>Confidential Consultations</h3>
-                    <p>A respectful and private environment for every patient.</p>
+                    <h3>Convenient Location</h3>
+                    <p>
+                        Medicover Hospital, Financial District, Nanakramguda,
+                        Hyderabad.
+                    </p>
                 </div>
             </div>
         </div>
@@ -395,38 +472,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 PATIENT EXPERIENCES
             </div>
 
-            <h2>Trusted by patients<br><span>and their families.</span></h2>
+            <h2>
+                Trusted by patients
+                <br>
+                <span>and their families.</span>
+            </h2>
         </div>
 
         <div class="review-grid">
             <article class="review-card reveal">
                 <div class="stars">★★★★★</div>
+
                 <p>
                     “The consultation was detailed, clear and reassuring.
                     The entire treatment process was explained properly.”
                 </p>
+
                 <strong>Rajesh K.</strong>
-                <small>Verified Patient</small>
+                <small>Patient Review</small>
             </article>
 
             <article class="review-card review-card-highlight reveal">
                 <div class="stars">★★★★★</div>
+
                 <p>
                     “Professional, patient and very approachable. I am happy
                     with the treatment and recovery.”
                 </p>
+
                 <strong>Manish S.</strong>
-                <small>Verified Patient</small>
+                <small>Patient Review</small>
             </article>
 
             <article class="review-card reveal">
                 <div class="stars">★★★★★</div>
+
                 <p>
                     “A very comfortable experience from diagnosis through
                     follow-up. Highly recommended.”
                 </p>
+
                 <strong>Vikas R.</strong>
-                <small>Verified Patient</small>
+                <small>Patient Review</small>
             </article>
         </div>
     </div>
@@ -440,20 +527,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 BOOK YOUR VISIT
             </div>
 
-            <h2>Take the first step toward <span>better health.</span></h2>
+            <h2>
+                Take the first step toward
+                <span>better urological health.</span>
+            </h2>
 
             <p>
-                Schedule a consultation for expert diagnosis and personalized
-                urological care.
+                Book a consultation with Dr. Vinay Ausekar at Medicover
+                Hospitals, Financial District, Hyderabad.
             </p>
 
             <div class="appointment-contact">
-                <a href="tel:+919582373383">☎ +91 95823 73383</a>
-                <a href="mailto:care@example.com">✉ care@example.com</a>
+                <a href="tel:04068334455">☎ 040-68334455</a>
+
+                <a href="mailto:info@medicoverhospitals.in">
+                    ✉ info@medicoverhospitals.in
+                </a>
             </div>
         </div>
 
-        <form class="appointment-form reveal" method="POST" action="#appointment">
+        <form
+            class="appointment-form reveal"
+            method="POST"
+            action="#appointment"
+        >
             <?php if ($successMessage): ?>
                 <div class="form-message success-message">
                     <?php echo htmlspecialchars($successMessage); ?>
@@ -469,35 +566,74 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="form-row">
                 <label>
                     Your Name
-                    <input type="text" name="name" placeholder="Enter your name" required>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
                 </label>
 
                 <label>
                     Mobile Number
-                    <input type="text" name="phone" placeholder="+91 XXXXX XXXXX" required>
+
+                    <input
+                        type="text"
+                        name="phone"
+                        placeholder="+91 XXXXX XXXXX"
+                        required
+                    >
                 </label>
             </div>
 
             <label>
                 Email Address
-                <input type="email" name="email" placeholder="you@example.com">
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="you@example.com"
+                >
             </label>
 
             <label>
                 Select Service
+
                 <select name="service">
                     <option value="">Choose a service</option>
-                    <option value="Kidney Stone Treatment">Kidney Stone Treatment</option>
-                    <option value="Prostate Care">Prostate Care</option>
-                    <option value="Andrology">Andrology</option>
-                    <option value="Laparoscopic Urology">Laparoscopic Urology</option>
-                    <option value="General Consultation">General Consultation</option>
+                    <option value="Kidney Stone Treatment">
+                        Kidney Stone Treatment
+                    </option>
+                    <option value="Prostate Care">
+                        Prostate Care
+                    </option>
+                    <option value="Uro-Oncology">
+                        Uro-Oncology
+                    </option>
+                    <option value="Robotic and Laparoscopic Urology">
+                        Robotic and Laparoscopic Urology
+                    </option>
+                    <option value="Renal Transplant">
+                        Renal Transplant
+                    </option>
+                    <option value="Andrology and Men's Health">
+                        Andrology and Men's Health
+                    </option>
+                    <option value="General Consultation">
+                        General Consultation
+                    </option>
                 </select>
             </label>
 
             <label>
                 Your Message
-                <textarea name="message" rows="4" placeholder="Tell us briefly about your concern"></textarea>
+
+                <textarea
+                    name="message"
+                    rows="4"
+                    placeholder="Tell us briefly about your concern"
+                ></textarea>
             </label>
 
             <button type="submit" class="button button-primary form-button">
@@ -517,21 +653,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container footer-grid">
         <div class="footer-brand">
             <a href="#home" class="brand">
-                <span class="brand-mark">+</span>
-                <span>
-                    <strong>DR. AARAV MEHTA</strong>
-                    <small>UROLOGIST & ANDROLOGIST</small>
-                </span>
+                <img
+                    class="medicover-logo"
+                    src="images/medicover-logo.png"
+                    alt="Medicover Hospitals"
+                >
             </a>
 
             <p>
-                Advanced urological care with clinical expertise,
-                compassion and personal attention.
+                Advanced urological care at Medicover Hospitals with modern
+                technology, experienced specialists and patient-focused
+                treatment.
             </p>
         </div>
 
         <div class="footer-column">
             <h3>Useful Links</h3>
+
             <a href="#home">Home</a>
             <a href="#about">About Doctor</a>
             <a href="#specializations">Specializations</a>
@@ -540,32 +678,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="footer-column">
-            <h3>Services</h3>
+            <h3>Specialist Services</h3>
+
             <a href="#specializations">Kidney Stone Treatment</a>
             <a href="#specializations">Prostate Care</a>
-            <a href="#specializations">Andrology</a>
-            <a href="#specializations">Laparoscopic Urology</a>
+            <a href="#specializations">Uro-Oncology</a>
             <a href="#specializations">Robotic Surgery</a>
+            <a href="#specializations">Renal Transplant</a>
         </div>
 
         <div class="footer-column footer-contact">
             <h3>Get In Touch</h3>
-            <a href="tel:+919582373383">+91 95823 73383</a>
-            <a href="mailto:care@example.com">care@example.com</a>
+
+            <a href="tel:04068334455">040-68334455</a>
+
+            <a href="mailto:info@medicoverhospitals.in">
+                info@medicoverhospitals.in
+            </a>
+
             <p>
-                B-1, Medical Care Road,<br>
-                New Delhi, India - 110027
+                Medicover Hospital,<br>
+                Myscape Road, Beside The District Building,<br>
+                Financial District, Nanakramguda,<br>
+                Hyderabad, Telangana - 500032
             </p>
         </div>
     </div>
 
     <div class="container footer-bottom">
-        <span>© <?php echo date('Y'); ?> Dr. Aarav Mehta. All Rights Reserved.</span>
-        <span>Designed for better healthcare experiences.</span>
+        <span>
+            © <?php echo date('Y'); ?> Medicover Hospitals. All Rights Reserved.
+        </span>
+
+        <span>
+            Dr. Vinay Ausekar | Senior Consultant Urologist
+        </span>
     </div>
 </footer>
 
-<a class="floating-whatsapp" href="https://wa.me/919315158716" target="_blank" aria-label="Chat on WhatsApp">
+<a
+    class="floating-whatsapp"
+    href="https://wa.me/917075493806"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat on WhatsApp"
+>
     <span>◉</span>
 </a>
 
