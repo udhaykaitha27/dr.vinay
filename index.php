@@ -1,32 +1,3 @@
-<?php
-$successMessage = '';
-$errorMessage = '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = trim($_POST['name'] ?? '');
-    $phone = trim($_POST['phone'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-    $service = trim($_POST['service'] ?? '');
-    $message = trim($_POST['message'] ?? '');
-
-    if ($name === '' || $phone === '') {
-        $errorMessage = 'Please enter your name and mobile number.';
-    } elseif (!preg_match('/^[0-9+\-\s()]{8,20}$/', $phone)) {
-        $errorMessage = 'Please enter a valid mobile number.';
-    } elseif ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errorMessage = 'Please enter a valid email address.';
-    } else {
-        /*
-         * Add secure database storage, SMTP email delivery,
-         * Medicover appointment API, or a trusted form service here.
-         *
-         * This example only displays a success message.
-         */
-
-        $successMessage = 'Thank you. Your appointment request has been received.';
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,10 +37,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <a
                 class="topbar-whatsapp"
-                href="https://wa.me/917075493806"
+                href="https://wa.me/917075493806?text=Hello%20Dr.%20Vinay%2C%20I%20would%20like%20to%20book%20an%20appointment."
                 target="_blank"
                 rel="noopener"
             >
+                <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 3.6a12 12 0 0 0-10.2 18.2l-1.6 5.8 6.1-1.6A12 12 0 1 0 16 3.6Z"/>
+                    <path fill="currentColor" d="M11.4 9.3c-.3-.7-.6-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.5c.2.2 2.5 3.9 6 5.3 3 .1 3.5.9 4.1.8.7-.1 2-.8 2.3-1.7.3-.8.3-1.5.2-1.7-.1-.2-.4-.3-.8-.5-.4-.2-2-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.8 1.1-1.1 1.3-.2.2-.4.3-.8.1-.4-.2-1.4-.5-2.7-1.6-1-.9-1.6-2-1.8-2.3-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.2-.4.4-.6.1-.2.1-.5 0-.7-.1-.2-.7-1.8-1-2.5Z"/>
+                </svg>
                 WhatsApp Consultation
             </a>
         </div>
@@ -303,6 +278,191 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </section>
 
+<section class="patient-videos-section section-padding" id="patient-videos">
+    <div class="container">
+        <div class="patient-videos-heading section-heading centered reveal">
+            <div class="section-label">PATIENT VIDEOS</div>
+            <h2>Patient stories &amp; <span>urology insights.</span></h2>
+            <p>
+                Patient testimonials and educational videos from
+                Dr. Vinay Ausekar.
+            </p>
+        </div>
+
+        <div class="patient-videos-layout">
+            <div class="patient-video-main">
+                <div class="patient-video-player">
+                    <video
+                        id="mainVideoPlayer"
+                        src="videos/patient-1.mp4"
+                        controls
+                        playsinline
+                        preload="metadata"
+                        aria-label="Selected patient video"
+                    >
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="patient-video-caption">
+                    <span class="patient-video-icon" aria-hidden="true">▶</span>
+                    <div>
+                        <h3 id="patientVideoTitle">Patient Story 1</h3>
+                        <p id="patientVideoDesc">
+                            A patient testimonial video.
+                        </p>
+                    </div>
+                </div>
+                <p
+                    class="patient-video-status"
+                    id="patientVideoStatus"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+            </div>
+
+            <div class="patient-playlist">
+                <h3 class="patient-playlist-title">Video Library</h3>
+
+                <div class="patient-playlist-sidebar" aria-label="Choose a video">
+                    <button
+                        class="video-playlist-btn video-btn-active"
+                        type="button"
+                        data-video-path="videos/patient-1.mp4"
+                        data-title="Patient Story 1"
+                        data-description="A patient testimonial video."
+                        aria-pressed="true"
+                    >
+                        <span class="video-playlist-thumb">
+                            <img src="images/patient-1-thumb.jpg" alt="" loading="lazy">
+                            <span class="video-playlist-placeholder" aria-hidden="true">01</span>
+                            <span class="video-playlist-overlay" aria-hidden="true">▶</span>
+                        </span>
+                        <span class="video-playlist-copy">
+                            <span class="video-playlist-name">Patient Story 1</span>
+                            <span class="video-playlist-label">Patient Story</span>
+                        </span>
+                    </button>
+
+                    <button
+                        class="video-playlist-btn"
+                        type="button"
+                        data-video-path="videos/patient-2.mp4"
+                        data-title="Patient Story 2"
+                        data-description="A patient testimonial video."
+                        aria-pressed="false"
+                    >
+                        <span class="video-playlist-thumb">
+                            <img src="images/patient-2-thumb.jpg" alt="" loading="lazy">
+                            <span class="video-playlist-placeholder" aria-hidden="true">02</span>
+                            <span class="video-playlist-overlay" aria-hidden="true">▶</span>
+                        </span>
+                        <span class="video-playlist-copy">
+                            <span class="video-playlist-name">Patient Story 2</span>
+                            <span class="video-playlist-label">Patient Story</span>
+                        </span>
+                    </button>
+
+                    <button
+                        class="video-playlist-btn"
+                        type="button"
+                        data-video-path="videos/patient-3.mp4"
+                        data-title="Patient Story 3"
+                        data-description="A patient testimonial video."
+                        aria-pressed="false"
+                    >
+                        <span class="video-playlist-thumb">
+                            <img src="images/patient-3-thumb.jpg" alt="" loading="lazy">
+                            <span class="video-playlist-placeholder" aria-hidden="true">03</span>
+                            <span class="video-playlist-overlay" aria-hidden="true">▶</span>
+                        </span>
+                        <span class="video-playlist-copy">
+                            <span class="video-playlist-name">Patient Story 3</span>
+                            <span class="video-playlist-label">Patient Story</span>
+                        </span>
+                    </button>
+
+                    <button
+                        class="video-playlist-btn"
+                        type="button"
+                        data-video-path="videos/patient-4.mp4"
+                        data-title="Patient Story 4"
+                        data-description="A patient testimonial video."
+                        aria-pressed="false"
+                    >
+                        <span class="video-playlist-thumb">
+                            <img src="images/patient-4-thumb.jpg" alt="" loading="lazy">
+                            <span class="video-playlist-placeholder" aria-hidden="true">04</span>
+                            <span class="video-playlist-overlay" aria-hidden="true">▶</span>
+                        </span>
+                        <span class="video-playlist-copy">
+                            <span class="video-playlist-name">Patient Story 4</span>
+                            <span class="video-playlist-label">Patient Story</span>
+                        </span>
+                    </button>
+
+                    <button
+                        class="video-playlist-btn"
+                        type="button"
+                        data-video-path="videos/patient-5.mp4"
+                        data-title="Patient Story 5"
+                        data-description="A patient testimonial video."
+                        aria-pressed="false"
+                    >
+                        <span class="video-playlist-thumb">
+                            <img src="images/patient-5-thumb.jpg" alt="" loading="lazy">
+                            <span class="video-playlist-placeholder" aria-hidden="true">05</span>
+                            <span class="video-playlist-overlay" aria-hidden="true">▶</span>
+                        </span>
+                        <span class="video-playlist-copy">
+                            <span class="video-playlist-name">Patient Story 5</span>
+                            <span class="video-playlist-label">Patient Story</span>
+                        </span>
+                    </button>
+
+                    <button
+                        class="video-playlist-btn"
+                        type="button"
+                        data-video-path="videos/patient-6.mp4"
+                        data-title="Patient Story 6"
+                        data-description="A patient testimonial video."
+                        aria-pressed="false"
+                    >
+                        <span class="video-playlist-thumb">
+                            <img src="images/patient-6-thumb.jpg" alt="" loading="lazy">
+                            <span class="video-playlist-placeholder" aria-hidden="true">06</span>
+                            <span class="video-playlist-overlay" aria-hidden="true">▶</span>
+                        </span>
+                        <span class="video-playlist-copy">
+                            <span class="video-playlist-name">Patient Story 6</span>
+                            <span class="video-playlist-label">Patient Story</span>
+                        </span>
+                    </button>
+
+                    <button
+                        class="video-playlist-btn"
+                        type="button"
+                        data-video-path="videos/patient-7.mp4"
+                        data-title="Patient Story 7"
+                        data-description="A patient testimonial video."
+                        aria-pressed="false"
+                    >
+                        <span class="video-playlist-thumb">
+                            <img src="images/patient-7-thumb.jpg" alt="" loading="lazy">
+                            <span class="video-playlist-placeholder" aria-hidden="true">07</span>
+                            <span class="video-playlist-overlay" aria-hidden="true">▶</span>
+                        </span>
+                        <span class="video-playlist-copy">
+                            <span class="video-playlist-name">Patient Story 7</span>
+                            <span class="video-playlist-label">Patient Story</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="specialties-section section-padding" id="specializations">
     <div class="container">
         <div class="specialties-heading reveal">
@@ -318,71 +478,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="specialties-layout">
-            <div class="specialty-tabs">
-                <button class="specialty-tab active" type="button">
+            <div class="specialty-tabs" role="tablist" aria-label="Areas of expertise">
+                <button class="specialty-tab active" type="button" role="tab" aria-selected="true" aria-controls="specialtyDetail" data-specialty="kidney-stones">
                     <span>◈</span>
                     Kidney Stone Treatment
                 </button>
 
-                <button class="specialty-tab" type="button">
+                <button class="specialty-tab" type="button" role="tab" aria-selected="false" aria-controls="specialtyDetail" data-specialty="prostate">
                     <span>⌁</span>
                     Prostate Care
                 </button>
 
-                <button class="specialty-tab" type="button">
+                <button class="specialty-tab" type="button" role="tab" aria-selected="false" aria-controls="specialtyDetail" data-specialty="uro-oncology">
                     <span>✚</span>
                     Uro-Oncology
                 </button>
 
-                <button class="specialty-tab" type="button">
+                <button class="specialty-tab" type="button" role="tab" aria-selected="false" aria-controls="specialtyDetail" data-specialty="robotic-urology">
                     <span>◇</span>
                     Robotic &amp; Laparoscopic Urology
                 </button>
 
-                <button class="specialty-tab" type="button">
+                <button class="specialty-tab" type="button" role="tab" aria-selected="false" aria-controls="specialtyDetail" data-specialty="renal-transplant">
                     <span>◎</span>
                     Renal Transplant
                 </button>
 
-                <button class="specialty-tab" type="button">
+                <button class="specialty-tab" type="button" role="tab" aria-selected="false" aria-controls="specialtyDetail" data-specialty="andrology">
                     <span>⌘</span>
                     Andrology &amp; Men's Health
                 </button>
             </div>
 
-            <div class="specialty-description">
-                <p>
-                    Dr. Vinay Ausekar provides comprehensive urological care
-                    using modern diagnostic methods and minimally invasive
-                    treatment techniques at Medicover Hospitals.
-                </p>
-
-                <ul>
-                    <li>
-                        <strong>Kidney Stone Care:</strong>
-                        URSL, RIRS, PCNL and laser lithotripsy.
-                    </li>
-
-                    <li>
-                        <strong>Prostate Treatment:</strong>
-                        Care for enlarged prostate, TURP and laser procedures.
-                    </li>
-
-                    <li>
-                        <strong>Uro-Oncology:</strong>
-                        Treatment for kidney, bladder and prostate cancers.
-                    </li>
-
-                    <li>
-                        <strong>Advanced Surgery:</strong>
-                        Laparoscopic and robotic-assisted procedures.
-                    </li>
-
-                    <li>
-                        <strong>Specialised Urology:</strong>
-                        Renal transplant, reconstructive urology and andrology.
-                    </li>
-                </ul>
+            <div class="specialty-description" id="specialtyDetail" role="tabpanel" aria-live="polite">
+                <figure class="specialty-image-wrap" id="specialtyImageWrap" hidden>
+                    <img class="specialty-image" id="specialtyImage" alt="" loading="lazy">
+                    <figcaption class="specialty-image-credit" id="specialtyImageCredit"></figcaption>
+                </figure>
+                <div class="specialty-copy" id="specialtyCopy"></div>
             </div>
         </div>
     </div>
@@ -548,20 +681,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <form
             class="appointment-form reveal"
-            method="POST"
-            action="#appointment"
+            id="appointmentForm"
+            data-endpoint="PASTE_APPS_SCRIPT_WEB_APP_URL_HERE"
         >
-            <?php if ($successMessage): ?>
-                <div class="form-message success-message">
-                    <?php echo htmlspecialchars($successMessage); ?>
-                </div>
-            <?php endif; ?>
+            <p
+                class="form-message"
+                id="appointmentFormStatus"
+                role="status"
+                aria-live="polite"
+                hidden
+            ></p>
 
-            <?php if ($errorMessage): ?>
-                <div class="form-message error-message">
-                    <?php echo htmlspecialchars($errorMessage); ?>
-                </div>
-            <?php endif; ?>
+            <label class="form-honeypot" aria-hidden="true">
+                Leave this field empty
+                <input type="text" name="website" tabindex="-1" autocomplete="off">
+            </label>
 
             <div class="form-row">
                 <label>
@@ -570,6 +704,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input
                         type="text"
                         name="name"
+                        autocomplete="name"
                         placeholder="Enter your name"
                         required
                     >
@@ -579,8 +714,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     Mobile Number
 
                     <input
-                        type="text"
+                        type="tel"
                         name="phone"
+                        autocomplete="tel"
                         placeholder="+91 XXXXX XXXXX"
                         required
                     >
@@ -593,6 +729,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input
                     type="email"
                     name="email"
+                    autocomplete="email"
                     placeholder="you@example.com"
                 >
             </label>
@@ -637,11 +774,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </label>
 
             <button type="submit" class="button button-primary form-button">
-                Send Appointment Request <span>→</span>
+                <span>Send Appointment Request</span> <span aria-hidden="true">→</span>
             </button>
 
             <small class="form-note">
-                Your information is kept private and used only to contact you.
+                Your details are used only to respond to your appointment request.
             </small>
         </form>
     </div>
@@ -718,12 +855,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <a
     class="floating-whatsapp"
-    href="https://wa.me/917075493806"
+    href="https://wa.me/917075493806?text=Hello%20Dr.%20Vinay%2C%20I%20would%20like%20to%20book%20an%20appointment."
     target="_blank"
     rel="noopener"
-    aria-label="Chat on WhatsApp"
+    aria-label="Book an appointment via WhatsApp"
 >
-    <span>◉</span>
+    <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 3.6a12 12 0 0 0-10.2 18.2l-1.6 5.8 6.1-1.6A12 12 0 1 0 16 3.6Z"/>
+        <path fill="currentColor" d="M11.4 9.3c-.3-.7-.6-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.5c.2.2 2.5 3.9 6 5.3 3 .1 3.5.9 4.1.8.7-.1 2-.8 2.3-1.7.3-.8.3-1.5.2-1.7-.1-.2-.4-.3-.8-.5-.4-.2-2-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.8 1.1-1.1 1.3-.2.2-.4.3-.8.1-.4-.2-1.4-.5-2.7-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.2-.4.4-.6.1-.2.1-.5 0-.7-.1-.2-.7-1.8-1-2.5Z"/>
+    </svg>
+</a>
+
+<a
+    class="floating-appointment"
+    href="tel:+917075493806"
+    aria-label="Call for an appointment"
+>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7.2 3.5h2.4l1.2 4.2-1.9 1.5a14.2 14.2 0 0 0 5.9 5.9l1.5-1.9 4.2 1.2v2.4a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 5.2 5.7a2 2 0 0 1 2-2.2Z"/>
+    </svg>
 </a>
 
 <script src="script.js"></script>
