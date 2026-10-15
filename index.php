@@ -27,7 +27,7 @@
         <div class="container topbar-inner">
             <div class="topbar-item">
                 <span class="topbar-icon">☎</span>
-                <a href="tel:04068334455">040-68334455</a>
+                <a href="tel:+919966409838">+91 99664 09838</a>
             </div>
 
             <div class="topbar-item topbar-hours">
@@ -37,7 +37,7 @@
 
             <a
                 class="topbar-whatsapp"
-                href="https://wa.me/917075493806?text=Hello%20Dr.%20Vinay%2C%20I%20would%20like%20to%20book%20an%20appointment."
+                href="https://wa.me/919966409838?text=Hello%20Dr.%20Vinay%2C%20I%20would%20like%20to%20book%20an%20appointment."
                 target="_blank"
                 rel="noopener"
             >
@@ -101,7 +101,7 @@
         <div class="hero-content reveal">
             <div class="eyebrow">
                 <span class="eyebrow-line"></span>
-                MEDICOVER HOSPITALS
+                MEDICOVER HOSPITALS UROLOGY CARE
             </div>
 
             <h1>
@@ -120,7 +120,7 @@
                     <span>→</span>
                 </a>
 
-                <a href="tel:04068334455" class="button button-outline">
+                <a href="tel:+919966409838" class="button button-outline">
                     Call Medicover
                 </a>
             </div>
@@ -278,183 +278,208 @@
     </div>
 </section>
 
-<section class="patient-videos-section section-padding" id="patient-videos">
+<section class="doctor-videos-section section-padding" id="doctor-videos">
     <div class="container">
-        <div class="patient-videos-heading section-heading centered reveal">
-            <div class="section-label">PATIENT VIDEOS</div>
-            <h2>Patient stories &amp; <span>urology insights.</span></h2>
+        <div class="doctor-videos-heading section-heading centered reveal">
+            <div class="section-label">DOCTOR VIDEOS</div>
+            <h2>Doctor videos &amp; <span>urology insights.</span></h2>
             <p>
-                Patient testimonials and educational videos from
-                Dr. Vinay Ausekar.
+                Watch Instagram Reels featuring Dr. Vinay Ausekar.
             </p>
         </div>
 
-        <div class="patient-videos-layout">
-            <div class="patient-video-main">
-                <div class="patient-video-player">
-                    <video
+        <div class="doctor-videos-layout">
+            <div class="doctor-video-main">
+                <div class="doctor-video-player">
+                    <iframe
                         id="mainVideoPlayer"
-                        src="videos/patient-1.mp4"
-                        controls
-                        playsinline
-                        preload="metadata"
-                        aria-label="Selected patient video"
-                    >
-                        Your browser does not support the video tag.
-                    </video>
+                        src="https://www.instagram.com/reel/DcLwsZUPBEM/embed/"
+                        title="Instagram Reel by Dr. Vinay Ausekar"
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
                 </div>
 
-                <div class="patient-video-caption">
-                    <span class="patient-video-icon" aria-hidden="true">▶</span>
+                <div class="doctor-video-caption">
+                    <span class="doctor-video-icon" aria-hidden="true">▶</span>
                     <div>
-                        <h3 id="patientVideoTitle">Patient Story 1</h3>
-                        <p id="patientVideoDesc">
-                            A patient testimonial video.
+                        <h3 id="doctorVideoTitle">Dr. Vinay Ausekar · Reel 1</h3>
+                        <p id="doctorVideoDesc">
+                            Instagram Reel from Dr. Vinay Ausekar.
                         </p>
                     </div>
                 </div>
                 <p
-                    class="patient-video-status"
-                    id="patientVideoStatus"
+                    class="doctor-video-status"
+                    id="doctorVideoStatus"
                     role="status"
                     aria-live="polite"
                 ></p>
+                <a
+                    class="instagram-reel-link"
+                    id="doctorReelLink"
+                    href="https://www.instagram.com/reel/DcLwsZUPBEM/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Open this Reel on Instagram
+                </a>
             </div>
 
-            <div class="patient-playlist">
-                <h3 class="patient-playlist-title">Video Library</h3>
+            <div class="doctor-playlist">
+                <h3 class="doctor-playlist-title">Instagram Reels</h3>
 
-                <div class="patient-playlist-sidebar" aria-label="Choose a video">
+                <div class="doctor-playlist-sidebar" aria-label="Choose a Reel">
                     <button
                         class="video-playlist-btn video-btn-active"
                         type="button"
-                        data-video-path="videos/patient-1.mp4"
-                        data-title="Patient Story 1"
-                        data-description="A patient testimonial video."
+                        data-reel-id="DcLwsZUPBEM"
+                        data-title="Dr. Vinay Ausekar · Reel 1"
+                        data-description="Instagram Reel from Dr. Vinay Ausekar."
                         aria-pressed="true"
                     >
                         <span class="video-playlist-thumb">
-                            <img src="images/patient-1-thumb.jpg" alt="" loading="lazy">
+                            <img src="images/reels/DcLwsZUPBEM.jpg" alt="" loading="lazy">
                             <span class="video-playlist-placeholder" aria-hidden="true">01</span>
                             <span class="video-playlist-overlay" aria-hidden="true">▶</span>
                         </span>
                         <span class="video-playlist-copy">
-                            <span class="video-playlist-name">Patient Story 1</span>
-                            <span class="video-playlist-label">Patient Story</span>
+                            <span class="video-playlist-name">Dr. Vinay Ausekar · Reel 1</span>
+                            <span class="video-playlist-label">Doctor Video</span>
                         </span>
                     </button>
 
                     <button
                         class="video-playlist-btn"
                         type="button"
-                        data-video-path="videos/patient-2.mp4"
-                        data-title="Patient Story 2"
-                        data-description="A patient testimonial video."
+                        data-reel-id="DcyBTa5PFHx"
+                        data-title="Dr. Vinay Ausekar · Reel 2"
+                        data-description="Instagram Reel from Dr. Vinay Ausekar."
                         aria-pressed="false"
                     >
                         <span class="video-playlist-thumb">
-                            <img src="images/patient-2-thumb.jpg" alt="" loading="lazy">
+                            <img src="images/reels/DcyBTa5PFHx.jpg" alt="" loading="lazy">
                             <span class="video-playlist-placeholder" aria-hidden="true">02</span>
                             <span class="video-playlist-overlay" aria-hidden="true">▶</span>
                         </span>
                         <span class="video-playlist-copy">
-                            <span class="video-playlist-name">Patient Story 2</span>
-                            <span class="video-playlist-label">Patient Story</span>
+                            <span class="video-playlist-name">Dr. Vinay Ausekar · Reel 2</span>
+                            <span class="video-playlist-label">Doctor Video</span>
                         </span>
                     </button>
 
                     <button
                         class="video-playlist-btn"
                         type="button"
-                        data-video-path="videos/patient-3.mp4"
-                        data-title="Patient Story 3"
-                        data-description="A patient testimonial video."
+                        data-reel-id="DeD6EM7vUfm"
+                        data-title="Dr. Vinay Ausekar · Reel 3"
+                        data-description="Instagram Reel from Dr. Vinay Ausekar."
                         aria-pressed="false"
                     >
                         <span class="video-playlist-thumb">
-                            <img src="images/patient-3-thumb.jpg" alt="" loading="lazy">
+                            <img src="images/reels/DeD6EM7vUfm.jpg" alt="" loading="lazy">
                             <span class="video-playlist-placeholder" aria-hidden="true">03</span>
                             <span class="video-playlist-overlay" aria-hidden="true">▶</span>
                         </span>
                         <span class="video-playlist-copy">
-                            <span class="video-playlist-name">Patient Story 3</span>
-                            <span class="video-playlist-label">Patient Story</span>
+                            <span class="video-playlist-name">Dr. Vinay Ausekar · Reel 3</span>
+                            <span class="video-playlist-label">Doctor Video</span>
                         </span>
                     </button>
 
                     <button
                         class="video-playlist-btn"
                         type="button"
-                        data-video-path="videos/patient-4.mp4"
-                        data-title="Patient Story 4"
-                        data-description="A patient testimonial video."
+                        data-reel-id="DdwMdYwPe1h"
+                        data-title="Dr. Vinay Ausekar · Reel 4"
+                        data-description="Instagram Reel from Dr. Vinay Ausekar."
                         aria-pressed="false"
                     >
                         <span class="video-playlist-thumb">
-                            <img src="images/patient-4-thumb.jpg" alt="" loading="lazy">
+                            <img src="images/reels/DdwMdYwPe1h.jpg" alt="" loading="lazy">
                             <span class="video-playlist-placeholder" aria-hidden="true">04</span>
                             <span class="video-playlist-overlay" aria-hidden="true">▶</span>
                         </span>
                         <span class="video-playlist-copy">
-                            <span class="video-playlist-name">Patient Story 4</span>
-                            <span class="video-playlist-label">Patient Story</span>
+                            <span class="video-playlist-name">Dr. Vinay Ausekar · Reel 4</span>
+                            <span class="video-playlist-label">Doctor Video</span>
                         </span>
                     </button>
 
                     <button
                         class="video-playlist-btn"
                         type="button"
-                        data-video-path="videos/patient-5.mp4"
-                        data-title="Patient Story 5"
-                        data-description="A patient testimonial video."
+                        data-reel-id="DdiSZ0ZPk3_"
+                        data-title="Dr. Vinay Ausekar · Reel 5"
+                        data-description="Instagram Reel from Dr. Vinay Ausekar."
                         aria-pressed="false"
                     >
                         <span class="video-playlist-thumb">
-                            <img src="images/patient-5-thumb.jpg" alt="" loading="lazy">
+                            <img src="images/reels/DdiSZ0ZPk3_.jpg" alt="" loading="lazy">
                             <span class="video-playlist-placeholder" aria-hidden="true">05</span>
                             <span class="video-playlist-overlay" aria-hidden="true">▶</span>
                         </span>
                         <span class="video-playlist-copy">
-                            <span class="video-playlist-name">Patient Story 5</span>
-                            <span class="video-playlist-label">Patient Story</span>
+                            <span class="video-playlist-name">Dr. Vinay Ausekar · Reel 5</span>
+                            <span class="video-playlist-label">Doctor Video</span>
                         </span>
                     </button>
 
                     <button
                         class="video-playlist-btn"
                         type="button"
-                        data-video-path="videos/patient-6.mp4"
-                        data-title="Patient Story 6"
-                        data-description="A patient testimonial video."
+                        data-reel-id="DdakxA0PF4Q"
+                        data-title="Dr. Vinay Ausekar · Reel 7"
+                        data-description="Instagram Reel from Dr. Vinay Ausekar."
                         aria-pressed="false"
                     >
                         <span class="video-playlist-thumb">
-                            <img src="images/patient-6-thumb.jpg" alt="" loading="lazy">
-                            <span class="video-playlist-placeholder" aria-hidden="true">06</span>
-                            <span class="video-playlist-overlay" aria-hidden="true">▶</span>
-                        </span>
-                        <span class="video-playlist-copy">
-                            <span class="video-playlist-name">Patient Story 6</span>
-                            <span class="video-playlist-label">Patient Story</span>
-                        </span>
-                    </button>
-
-                    <button
-                        class="video-playlist-btn"
-                        type="button"
-                        data-video-path="videos/patient-7.mp4"
-                        data-title="Patient Story 7"
-                        data-description="A patient testimonial video."
-                        aria-pressed="false"
-                    >
-                        <span class="video-playlist-thumb">
-                            <img src="images/patient-7-thumb.jpg" alt="" loading="lazy">
+                            <img src="images/reels/DdakxA0PF4Q.jpg" alt="" loading="lazy">
                             <span class="video-playlist-placeholder" aria-hidden="true">07</span>
                             <span class="video-playlist-overlay" aria-hidden="true">▶</span>
                         </span>
                         <span class="video-playlist-copy">
-                            <span class="video-playlist-name">Patient Story 7</span>
-                            <span class="video-playlist-label">Patient Story</span>
+                            <span class="video-playlist-name">Dr. Vinay Ausekar · Reel 7</span>
+                            <span class="video-playlist-label">Doctor Video</span>
+                        </span>
+                    </button>
+
+                    <button
+                        class="video-playlist-btn"
+                        type="button"
+                        data-reel-id="DdX73uuPLIN"
+                        data-title="Dr. Vinay Ausekar · Reel 8"
+                        data-description="Instagram Reel from Dr. Vinay Ausekar."
+                        aria-pressed="false"
+                    >
+                        <span class="video-playlist-thumb">
+                            <img src="images/reels/DdX73uuPLIN.jpg" alt="" loading="lazy">
+                            <span class="video-playlist-placeholder" aria-hidden="true">08</span>
+                            <span class="video-playlist-overlay" aria-hidden="true">▶</span>
+                        </span>
+                        <span class="video-playlist-copy">
+                            <span class="video-playlist-name">Dr. Vinay Ausekar · Reel 8</span>
+                            <span class="video-playlist-label">Doctor Video</span>
+                        </span>
+                    </button>
+
+                    <button
+                        class="video-playlist-btn"
+                        type="button"
+                        data-reel-id="DcavCngPNoV"
+                        data-title="Dr. Vinay Ausekar · Reel 9"
+                        data-description="Instagram Reel from Dr. Vinay Ausekar."
+                        aria-pressed="false"
+                    >
+                        <span class="video-playlist-thumb">
+                            <img src="images/reels/DcavCngPNoV.jpg" alt="" loading="lazy">
+                            <span class="video-playlist-placeholder" aria-hidden="true">09</span>
+                            <span class="video-playlist-overlay" aria-hidden="true">▶</span>
+                        </span>
+                        <span class="video-playlist-copy">
+                            <span class="video-playlist-name">Dr. Vinay Ausekar · Reel 9</span>
+                            <span class="video-playlist-label">Doctor Video</span>
                         </span>
                     </button>
                 </div>
@@ -513,7 +538,6 @@
             <div class="specialty-description" id="specialtyDetail" role="tabpanel" aria-live="polite">
                 <figure class="specialty-image-wrap" id="specialtyImageWrap" hidden>
                     <img class="specialty-image" id="specialtyImage" alt="" loading="lazy">
-                    <figcaption class="specialty-image-credit" id="specialtyImageCredit"></figcaption>
                 </figure>
                 <div class="specialty-copy" id="specialtyCopy"></div>
             </div>
@@ -671,7 +695,7 @@
             </p>
 
             <div class="appointment-contact">
-                <a href="tel:04068334455">☎ 040-68334455</a>
+                <a href="tel:+919966409838">☎ +91 99664 09838</a>
 
                 <a href="mailto:info@medicoverhospitals.in">
                     ✉ info@medicoverhospitals.in
@@ -682,7 +706,7 @@
         <form
             class="appointment-form reveal"
             id="appointmentForm"
-            data-endpoint="PASTE_APPS_SCRIPT_WEB_APP_URL_HERE"
+            data-endpoint="https://script.google.com/macros/s/AKfycbw-8pfXk37YjMUW9WNifap8KPNKX3QUSFIM6SVW8V5Rul3h38VqiD_m_Znj6hFX48GA/exec"
         >
             <p
                 class="form-message"
@@ -694,7 +718,7 @@
 
             <label class="form-honeypot" aria-hidden="true">
                 Leave this field empty
-                <input type="text" name="website" tabindex="-1" autocomplete="off">
+                <input type="text" name="faxNumber" tabindex="-1" autocomplete="new-password" readonly>
             </label>
 
             <div class="form-row">
@@ -827,7 +851,7 @@
         <div class="footer-column footer-contact">
             <h3>Get In Touch</h3>
 
-            <a href="tel:04068334455">040-68334455</a>
+            <a href="tel:+919966409838">+91 99664 09838</a>
 
             <a href="mailto:info@medicoverhospitals.in">
                 info@medicoverhospitals.in
@@ -855,7 +879,7 @@
 
 <a
     class="floating-whatsapp"
-    href="https://wa.me/917075493806?text=Hello%20Dr.%20Vinay%2C%20I%20would%20like%20to%20book%20an%20appointment."
+    href="https://wa.me/919966409838?text=Hello%20Dr.%20Vinay%2C%20I%20would%20like%20to%20book%20an%20appointment."
     target="_blank"
     rel="noopener"
     aria-label="Book an appointment via WhatsApp"
@@ -868,7 +892,7 @@
 
 <a
     class="floating-appointment"
-    href="tel:+917075493806"
+    href="tel:+919966409838"
     aria-label="Call for an appointment"
 >
     <svg viewBox="0 0 24 24" aria-hidden="true">

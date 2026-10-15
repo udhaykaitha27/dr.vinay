@@ -637,37 +637,37 @@ h2 span {
     font-size: 11px;
 }
 
-.patient-videos-section {
+.doctor-videos-section {
     background: var(--blue-soft);
 }
 
-.patient-videos-heading {
+.doctor-videos-heading {
     margin-bottom: 45px;
 }
 
-.patient-videos-heading .section-label {
+.doctor-videos-heading .section-label {
     justify-content: center;
     margin-bottom: 20px;
     color: var(--teal);
 }
 
-.patient-videos-heading h2 {
+.doctor-videos-heading h2 {
     margin-bottom: 15px;
 }
 
-.patient-videos-heading > p {
+.doctor-videos-heading > p {
     color: var(--muted);
     font-size: 15px;
 }
 
-.patient-videos-layout {
+.doctor-videos-layout {
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
     align-items: start;
     gap: 40px;
 }
 
-.patient-video-player {
+.doctor-video-player {
     width: min(100%, 420px);
     aspect-ratio: 9 / 16;
     margin: 0 auto;
@@ -678,14 +678,14 @@ h2 span {
     box-shadow: var(--shadow);
 }
 
-.patient-video-player video {
+.doctor-video-player iframe {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    border: 0;
 }
 
-.patient-video-caption {
+.doctor-video-caption {
     display: flex;
     align-items: flex-start;
     gap: 16px;
@@ -697,7 +697,7 @@ h2 span {
     border-radius: 14px;
 }
 
-.patient-video-icon {
+.doctor-video-icon {
     display: grid;
     width: 42px;
     height: 42px;
@@ -709,38 +709,49 @@ h2 span {
     font-size: 15px;
 }
 
-.patient-video-caption h3 {
+.doctor-video-caption h3 {
     margin-bottom: 5px;
     color: var(--navy);
     font-size: 16px;
 }
 
-.patient-video-caption p,
-.patient-video-status {
+.doctor-video-caption p,
+.doctor-video-status {
     color: var(--muted);
     font-size: 12px;
 }
 
-.patient-video-status {
+.doctor-video-status {
     min-height: 1.5em;
     margin: 10px auto 0;
     text-align: center;
 }
 
-.patient-playlist {
+.doctor-playlist {
     min-width: 0;
 }
 
-.patient-playlist-title {
+.doctor-playlist-title {
     margin-bottom: 18px;
     color: var(--navy);
     font-size: 18px;
 }
 
-.patient-playlist-sidebar {
+.doctor-playlist-sidebar {
     max-height: 49rem;
     overflow-y: auto;
     padding: 2px 8px 2px 2px;
+}
+
+.instagram-reel-link {
+    display: block;
+    width: fit-content;
+    margin: 12px auto 0;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .video-playlist-btn {
@@ -961,20 +972,6 @@ h2 span {
     width: 100%;
     height: 230px;
     object-fit: cover;
-}
-
-.specialty-image-credit {
-    padding: 7px 12px;
-    color: rgba(255, 255, 255, 0.78);
-    background: rgba(8, 60, 120, 0.25);
-    font-size: 10px;
-    line-height: 1.4;
-}
-
-.specialty-image-credit a {
-    color: inherit;
-    text-decoration: underline;
-    text-underline-offset: 2px;
 }
 
 .why-section {
@@ -1477,15 +1474,15 @@ textarea {
     .why-grid,
     .appointment-grid,
     .specialties-layout,
-    .patient-videos-layout {
+    .doctor-videos-layout {
         grid-template-columns: 1fr;
     }
 
-    .patient-videos-layout {
+    .doctor-videos-layout {
         gap: 30px;
     }
 
-    .patient-video-player {
+    .doctor-video-player {
         width: min(100%, 352px);
     }
 

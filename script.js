@@ -99,9 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const specialtyCopy = document.getElementById("specialtyCopy");
     const specialtyImage = document.getElementById("specialtyImage");
     const specialtyImageWrap = document.getElementById("specialtyImageWrap");
-    const specialtyImageCredit = document.getElementById(
-        "specialtyImageCredit"
-    );
 
     const specialties = {
         "kidney-stones": {
@@ -113,11 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Retrograde intrarenal surgery (RIRS)",
                 "Percutaneous nephrolithotomy (PCNL)"
             ],
-            image: "images/procedures/kidney-stones.jpg",
-            imageAlt: "X-ray image showing a kidney stone",
-            imageCredit: "Nevit Dilmen · CC BY-SA 3.0",
-            imageCreditUrl:
-                "https://commons.wikimedia.org/wiki/File:Staghorn_Kidney_Stone_08779.jpg"
+            image: "images/procedures/Kidney%20Pain-1.png",
+            imageAlt: "Client-provided illustration for kidney stone care"
         },
         prostate: {
             title: "Prostate Care",
@@ -128,11 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Laser prostate enucleation",
                 "Individualised assessment and treatment planning"
             ],
-            image: "images/procedures/prostate-care.jpg",
-            imageAlt: "Ultrasound image used to assess benign prostate enlargement",
-            imageCredit: "UltrasoundBPH · CC BY 3.0",
-            imageCreditUrl:
-                "https://commons.wikimedia.org/wiki/File:UltrasoundBPH.jpg"
+            image: "images/procedures/Prostate%20Pain-2.png",
+            imageAlt: "Client-provided illustration for prostate care"
         },
         "uro-oncology": {
             title: "Uro-Oncology",
@@ -143,11 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Bladder cancer surgery, including radical cystectomy",
                 "Prostate cancer care"
             ],
-            image: "images/procedures/uro-oncology.jpg",
-            imageAlt: "Surgeon at a da Vinci robotic surgery system",
-            imageCredit: "Gashriram · CC BY-SA 4.0",
-            imageCreditUrl:
-                "https://commons.wikimedia.org/wiki/File:Da_Vinci_Surgery.jpg"
+            image: "images/procedures/Kidney%20Pain%20Medical-3.png",
+            imageAlt: "Client-provided medical illustration for uro-oncology"
         },
         "robotic-urology": {
             title: "Robotic & Laparoscopic Urology",
@@ -158,11 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Laparoscopic nephrectomy",
                 "Laparoscopic pyeloplasty"
             ],
-            image: "images/procedures/robotic-urology.jpg",
-            imageAlt: "A robotic surgery system in an operating room",
-            imageCredit: "Nimur · CC BY-SA 3.0",
-            imageCreditUrl:
-                "https://commons.wikimedia.org/wiki/File:Laproscopic_Surgery_Robot.jpg"
+            image: "images/procedures/Robotic%20Surgery-4.png",
+            imageAlt: "Client-provided illustration for robotic surgery"
         },
         "renal-transplant": {
             title: "Renal Transplant",
@@ -173,11 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Kidney transplant surgery",
                 "Post-transplant urological follow-up"
             ],
-            image: "images/procedures/renal-transplant.jpg",
-            imageAlt: "Hospital care team supporting a recovering patient",
-            imageCredit: "Representative clinical photo · Pexels",
-            imageCreditUrl:
-                "https://images.pexels.com/photos/6129681/pexels-photo-6129681.jpeg"
+            image: "images/procedures/Surgeon%20Presenting%20Kidney%20with%20Renal%20System-5.png",
+            imageAlt: "Client-provided illustration for renal transplant care"
         },
         andrology: {
             title: "Andrology & Men's Health",
@@ -188,11 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Erectile dysfunction management",
                 "Assessment of testicular conditions"
             ],
-            image: "images/procedures/andrology.jpg",
-            imageAlt: "Sperm cell viewed through a microscope",
-            imageCredit: "Annulus microscopy, Sperm cell · CC BY 4.0",
-            imageCreditUrl:
-                "https://commons.wikimedia.org/wiki/File:Annulus_microscopy,_Sperm_cell.jpg"
+            image: "images/procedures/Urology%20Consultation-6.png",
+            imageAlt: "Client-provided illustration for urology consultation"
         }
     };
 
@@ -200,8 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (
             !specialtyCopy ||
             !specialtyImage ||
-            !specialtyImageWrap ||
-            !specialtyImageCredit
+            !specialtyImageWrap
         ) {
             return;
         }
@@ -247,13 +225,6 @@ document.addEventListener("DOMContentLoaded", () => {
         specialtyImageWrap.hidden = true;
         specialtyImage.hidden = true;
         specialtyImage.alt = specialty.imageAlt;
-        specialtyImageCredit.replaceChildren();
-        const creditLink = document.createElement("a");
-        creditLink.href = specialty.imageCreditUrl;
-        creditLink.target = "_blank";
-        creditLink.rel = "noopener noreferrer";
-        creditLink.textContent = specialty.imageCredit;
-        specialtyImageCredit.append(creditLink);
         specialtyImage.onload = () => {
             specialtyImage.hidden = false;
             specialtyImageWrap.hidden = false;
@@ -277,12 +248,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const videoPlayer = document.getElementById("mainVideoPlayer");
-    const videoTitle = document.getElementById("patientVideoTitle");
-    const videoDescription = document.getElementById("patientVideoDesc");
-    const videoStatus = document.getElementById("patientVideoStatus");
+    const videoTitle = document.getElementById("doctorVideoTitle");
+    const videoDescription = document.getElementById("doctorVideoDesc");
+    const videoStatus = document.getElementById("doctorVideoStatus");
     const videoButtons = document.querySelectorAll(".video-playlist-btn");
+    const videoLink = document.getElementById("doctorReelLink");
 
-    if (videoPlayer && videoTitle && videoDescription && videoStatus) {
+    if (
+        videoPlayer &&
+        videoTitle &&
+        videoDescription &&
+        videoStatus &&
+        videoLink
+    ) {
         videoButtons.forEach((button) => {
             const thumbnail = button.querySelector(".video-playlist-thumb img");
 
@@ -293,13 +271,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             button.addEventListener("click", () => {
-                const videoPath = button.dataset.videoPath;
+                const reelId = button.dataset.reelId;
                 const title = button.dataset.title;
                 const description = button.dataset.description;
 
-                if (!videoPath || !title || !description) {
+                if (!reelId || !/^[A-Za-z0-9_-]+$/.test(reelId) ||
+                    !title || !description) {
                     videoStatus.textContent =
-                        "This video is missing its playlist details.";
+                        "This Reel is missing its playlist details.";
                     return;
                 }
 
@@ -312,25 +291,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 button.setAttribute("aria-pressed", "true");
                 videoTitle.textContent = title;
                 videoDescription.textContent = description;
-                videoStatus.textContent = "Loading video...";
-
-                videoPlayer.src = videoPath;
-                videoPlayer.load();
-
-                const playRequest = videoPlayer.play();
-
-                if (playRequest) {
-                    playRequest.catch(() => {
-                        videoStatus.textContent =
-                            "Unable to play this video. Check that the video file is available and supported.";
-                    });
-                }
+                videoStatus.textContent = "Loading Instagram Reel...";
+                videoPlayer.title = title;
+                videoPlayer.src =
+                    "https://www.instagram.com/reel/" + reelId + "/embed/";
+                videoLink.href =
+                    "https://www.instagram.com/reel/" + reelId + "/";
             });
         });
 
-        videoPlayer.addEventListener("error", () => {
-            videoStatus.textContent =
-                "Video unavailable. Add the selected video file to the videos folder.";
+        videoPlayer.addEventListener("load", () => {
+            videoStatus.textContent = "";
         });
     }
 
@@ -393,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 )
             ) {
                 appointmentFormStatus.textContent =
-                    "Appointment requests are not configured yet. Please call 040-68334455 to book.";
+                    "Appointment requests are not configured yet. Please call +91 99664 09838 to book.";
                 appointmentFormStatus.className =
                     "form-message error-message";
                 appointmentFormStatus.hidden = false;
@@ -405,6 +376,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const formData = new FormData(appointmentForm);
+            if (String(formData.get("faxNumber") || "").trim()) {
+                appointmentFormStatus.textContent =
+                    "We could not submit your request. Please refresh the page and try again, or call +91 99664 09838 to book.";
+                appointmentFormStatus.className =
+                    "form-message error-message";
+                appointmentFormStatus.hidden = false;
+                return;
+            }
+
             const requestId =
                 window.crypto &&
                 typeof window.crypto.randomUUID === "function"
@@ -452,7 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (result.pending) {
                     appointmentFormStatus.textContent =
-                        "Your request is taking longer than expected. Please call 040-68334455 to confirm.";
+                        "Your request is taking longer than expected. Please call +91 99664 09838 to confirm.";
                     appointmentFormStatus.className =
                         "form-message error-message";
                 } else {
@@ -468,7 +448,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             } catch (error) {
                 appointmentFormStatus.textContent =
-                    "We could not confirm your request. Please call 040-68334455 to book.";
+                    "We could not confirm your request. Please call +91 99664 09838 to book.";
                 appointmentFormStatus.className =
                     "form-message error-message";
                 console.error("Appointment submission failed:", error);

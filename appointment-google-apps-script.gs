@@ -1,7 +1,7 @@
 // Bind this script to the leads spreadsheet and deploy it as a web app.
 // Deploy while signed in as shahjangfx@gmail.com so notifications come from that account.
 const APPOINTMENT_RECIPIENTS =
-    "SKSHAHJAHAN1994@gmail.com,vinayausekar@gmail.com";
+    "skshahjahan1994@gmail.com,vinayausekar@gmail.com";
 
 function doPost(event) {
     let request = {};
@@ -14,7 +14,7 @@ function doPost(event) {
             throw new Error("Invalid request identifier.");
         }
 
-        if (request.website) {
+        if (request.faxNumber) {
             result = {
                 success: true,
                 message: "Thank you. Your appointment request has been received."
@@ -90,7 +90,7 @@ function doPost(event) {
             result = {
                 success: false,
                 message:
-                    "Your request was saved, but the email notification could not be sent. Please call 040-68334455 to confirm."
+                    "Your request was saved, but the email notification could not be sent. Please call +91 99664 09838 to confirm."
             };
         }
     } catch (error) {
@@ -98,7 +98,7 @@ function doPost(event) {
         result = {
             success: false,
             message:
-                "We could not save your request. Please call 040-68334455 to book."
+                "We could not save your request. Please call +91 99664 09838 to book."
         };
     }
 

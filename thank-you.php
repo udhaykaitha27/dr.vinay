@@ -24,7 +24,7 @@
         <div class="container topbar-inner">
             <div class="topbar-item">
                 <span class="topbar-icon">☎</span>
-                <a href="tel:04068334455">040-68334455</a>
+                <a href="tel:+919966409838">+91 99664 09838</a>
             </div>
 
             <div class="topbar-item topbar-hours">
@@ -34,7 +34,7 @@
 
             <a
                 class="topbar-whatsapp"
-                href="https://wa.me/917075493806?text=Hello%20Dr.%20Vinay%2C%20I%20would%20like%20to%20book%20an%20appointment."
+                href="https://wa.me/919966409838?text=Hello%20Dr.%20Vinay%2C%20I%20would%20like%20to%20book%20an%20appointment."
                 target="_blank"
                 rel="noopener"
             >
@@ -104,8 +104,8 @@
                     <a class="button button-primary" href="index.php#home">
                         Return to Home
                     </a>
-                    <a class="button button-outline" href="tel:+917075493806">
-                        Call 70754 93806
+                    <a class="button button-outline" href="tel:+919966409838">
+                        Call +91 99664 09838
                     </a>
                 </div>
             </div>
@@ -150,7 +150,7 @@
 
         <div class="footer-column footer-contact">
             <h3>Get In Touch</h3>
-            <a href="tel:04068334455">040-68334455</a>
+            <a href="tel:+919966409838">+91 99664 09838</a>
             <a href="mailto:info@medicoverhospitals.in">
                 info@medicoverhospitals.in
             </a>
