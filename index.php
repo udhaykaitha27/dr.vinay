@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Dr. Vinay Ausekar | Senior Consultant Urologist | Medicover Hospitals</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
     <meta
         name="description"
